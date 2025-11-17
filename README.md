@@ -391,13 +391,12 @@ exit
 $RANDOM
 ```
 
-	A random integer between 0 and 32767 is generated
+***A random integer between 0 and 32767 is generated***
 
 ```bash
 $UID
 ```
 
-	 A User ID of the user logged in
+***A User ID of the user logged in***
 
-	 Root User always has zero(0) UID
-
+***Root User always has zero(0) UID***
