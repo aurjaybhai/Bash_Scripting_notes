@@ -1,5 +1,4 @@
 # Bash_Scripting_notes
-[Bash Scripting.md](https://github.com/user-attachments/files/23515796/Bash.Scripting.md)
 
 ##### Current Shell
 
