@@ -588,4 +588,29 @@ Visit [crontab.guru](https://crontab.guru/) for easy crontab expression generati
 - Background processes with `nohup` survive terminal closure
 
 ---
+**stdout**
+- Normal outut from commands
+- Successful results and regular messages
+**stderr**
+  - Error messages and warnings
+  - Diagnostic information
 
+##### Redirection Examples
+```bash
+# Redirect only stdout to a file
+command > output.txt
+
+# Redirect only stderr to a file
+command 2> errors.txt
+
+# Redirect both stdout and stderr to the same file
+command &> all_output.txt
+# or
+command > all_output.txt 2>&1
+
+# Redirect stdout to file, stderr to /dev/null (hide errors)
+command > output.txt 2> /dev/null
+
+# Redirect stderr to /dev/null (hide errors, show normal output)
+command 2> /dev/null
+```
