@@ -399,3 +399,193 @@ $UID
 ***A User ID of the user logged in***
 
 ***Root User always has zero(0) UID***
+
+## 📁 Path Operations
+
+### Get Filename from Path
+```bash
+basename /home/hello/myscripts/test.csv
+```
+**Output:** `test.csv`
+
+### Get Directory from Path
+```bash
+dirname /home/hello/myscripts/test.csv
+```
+**Output:** `/home/hello/myscripts`
+
+### Get Absolute Path
+```bash
+realpath test.csv
+```
+**Output:** `/home/hello/myscripts/test.csv`
+
+---
+
+## ✅ Check if File/Directory Exists
+
+### Directory Checks
+```bash
+# Check if directory exists
+if [ -d folder_name ]; then
+    echo "Directory exists"
+fi
+
+# Check if directory does NOT exist
+if [ ! -d folder_name ]; then
+    echo "Directory does not exist"
+fi
+```
+
+### File Checks
+```bash
+# Check if file exists
+if [ -f file_name ]; then
+    echo "File exists"
+fi
+
+# Check if file does NOT exist
+if [ ! -f file_name ]; then
+    echo "File does not exist"
+fi
+```
+
+---
+
+## 🔇 Suppress Command Output
+
+Redirect output to `/dev/null` to hide command output:
+
+```bash
+cd /root &> /dev/null
+```
+
+This redirects both stdout and stderr to null (no output displayed or saved).
+
+---
+
+## 📝 Script Information
+
+### Print Script Name
+```bash
+echo "The name of the script is: ${0}"
+```
+
+---
+
+## 📊 Logging
+
+### Using Logger
+Maintain logs for your scripts using the `logger` command:
+
+```bash
+logger "Hey Buddy"
+```
+
+**Log Location:** `/var/log/messages`
+
+---
+
+## 🐛 Debugging Scripts
+
+### Enable Debug Mode
+Add this to your script to see each command as it executes:
+
+```bash
+set -x
+```
+
+### Exit on Error
+Exit script immediately if any command fails:
+
+```bash
+set -e
+```
+
+---
+
+## 🔄 Running Scripts in Background
+
+### Run with nohup
+```bash
+nohup ./script.sh &
+```
+
+- Script runs in background even after logout
+- Output saved to `nohup.out` by default
+
+---
+
+## ⏰ Automating Scripts
+
+### Using `at` Command
+Schedule one-time job:
+
+```bash
+at 12:09 PM
+    <your_command>
+# Press Ctrl + D to save
+```
+
+**Check scheduled jobs:**
+```bash
+atq
+```
+
+**Remove scheduled job:**
+```bash
+atrm <id>
+```
+
+---
+
+## 📅 Using Crontab
+
+### View Existing Jobs
+```bash
+crontab -l
+```
+
+### Add New Cron Job
+```bash
+crontab -e
+```
+
+### Crontab Syntax
+```
+* * * * * command_to_execute
+│ │ │ │ │
+│ │ │ │ └─── Day of week (0-7, Sunday = 0 or 7)
+│ │ │ └───── Month (1-12)
+│ │ └─────── Day of month (1-31)
+│ └───────── Hour (0-23)
+└─────────── Minute (0-59)
+```
+
+### Examples
+
+**Run script every Sunday:**
+```bash
+0 0 * * 0 cd /home/hello/scripts && ./script.sh
+```
+
+**Run at 3:16 AM daily:**
+```bash
+16 03 * * * cd /home/hello/myscript && ./script.sh
+```
+
+### 🌐 Crontab Helper
+Visit [crontab.guru](https://crontab.guru/) for easy crontab expression generation!
+
+---
+
+## 💡 Quick Tips
+
+- Always use absolute paths in cron jobs
+- Test scripts manually before automating
+- Use `set -e` and `set -x` for safer scripts
+- Check logs regularly when using `logger`
+- Background processes with `nohup` survive terminal closure
+
+---
+
