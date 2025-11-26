@@ -591,6 +591,7 @@ Visit [crontab.guru](https://crontab.guru/) for easy crontab expression generati
 **stdout**
 - Normal outut from commands
 - Successful results and regular messages
+
 **stderr**
 - Error messages and warnings
 - Diagnostic information
