@@ -18,7 +18,7 @@ https://itsfoss.com/bash-arithmetic-operation/
 
 https://itsfoss.com/bash-arrays/
 
-#Chapter 6
+# Chapter 6
 
 https://itsfoss.com/bash-strings/
 
