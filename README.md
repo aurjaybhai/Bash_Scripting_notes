@@ -317,6 +317,8 @@ myfun
 
 #### How to use Arguments in Functions
 
+> 💡 **Note:** `local` keyword makes the variable exist only inside the function.
+
 ```bash
 addition() {
 local num1=$1
