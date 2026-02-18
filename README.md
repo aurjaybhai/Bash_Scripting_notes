@@ -635,3 +635,9 @@ bash -c 'install_chrome'   # ❌ fails, child doesn't know about it
 export -f install_chrome
 bash -c 'install_chrome'   # ✅ works, child can see the function
 ```
+
+### Tip to install and run the script
+
+```bash
+bash <(curl -s https://updates.zen-browser.app/appimage.sh)
+```
