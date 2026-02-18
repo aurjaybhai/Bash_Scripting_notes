@@ -619,3 +619,18 @@ command > output.txt 2> /dev/null
 # Redirect stderr to /dev/null (hide errors, show normal output)
 command 2> /dev/null
 ```
+## You can also export the function and variables to new bash shell
+
+```bash
+export -f install_chrome   # makes the function visible to child processes
+
+gum spin --spinner points --title 'Installing Chrome...' -- bash -c 'install_chrome'
+```
+
+# without export -f
+install_chrome() { ... }
+bash -c 'install_chrome'   # ❌ fails, child doesn't know about it
+
+# with export -f
+export -f install_chrome
+bash -c 'install_chrome'   # ✅ works, child can see the function
