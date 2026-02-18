@@ -639,5 +639,10 @@ bash -c 'install_chrome'   # ✅ works, child can see the function
 ### Tip to install and run the script
 
 ```bash
+# the long way
+curl -s https://updates.zen-browser.app/appimage.sh -o install.sh
+bash install.sh
+
+# the short way (what your command does)
 bash <(curl -s https://updates.zen-browser.app/appimage.sh)
 ```
