@@ -58,6 +58,8 @@ echo "${myArray[*]:1}"
 echo "${myArray[*]:1:2}"
 ```
 
+### "${my_array[@]}" expands the array into a list of all its elements, where each element is treated as a separate, quoted string.
+
 ##### Update an Array
 
 ```bash
