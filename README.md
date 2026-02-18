@@ -626,7 +626,7 @@ export -f install_chrome   # makes the function visible to child processes
 
 gum spin --spinner points --title 'Installing Chrome...' -- bash -c 'install_chrome'
 ```
-
+```bash
 # without export -f
 install_chrome() { ... }
 bash -c 'install_chrome'   # ❌ fails, child doesn't know about it
@@ -634,3 +634,4 @@ bash -c 'install_chrome'   # ❌ fails, child doesn't know about it
 # with export -f
 export -f install_chrome
 bash -c 'install_chrome'   # ✅ works, child can see the function
+```
